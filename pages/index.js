@@ -1,106 +1,100 @@
+import Head from "next/head";
+
 export default function Home() {
   return (
-    <div className="bg-gray-50 text-gray-900">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
-        <div className="mx-auto max-w-7xl px-6 py-24 lg:flex lg:items-center lg:gap-x-10">
-          <div className="lg:w-1/2">
-            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-              Welkom bij <span className="text-yellow-400">SmartHaven</span>
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-100">
-              Dé webshop voor slimme gadgets die je leven makkelijker en veiliger maken. 
-              Ontdek vandaag nog onze bestsellers met hoge marges en snelle levering.
+    <>
+      <Head>
+        <title>SmartHaven - Slimme producten voor elk huis</title>
+        <meta
+          name="description"
+          content="SmartHaven - Dé webshop voor slimme deurbel, camera, verlichting en meer. Maak je huis slimmer vandaag."
+        />
+      </Head>
+
+      <main className="bg-gray-50 text-gray-900">
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-r from-green-500 to-green-700 text-white">
+          <div className="max-w-7xl mx-auto px-6 py-24 text-center">
+            <h1 className="text-5xl font-bold mb-4">Welkom bij SmartHaven</h1>
+            <p className="text-xl mb-8">
+              Slimme oplossingen voor een veilig en modern huis
             </p>
-            <div className="mt-10 flex gap-x-6">
-              <a
-                href="#products"
-                className="rounded-xl bg-yellow-400 px-6 py-3 text-lg font-semibold text-gray-900 shadow hover:bg-yellow-300 transition"
-              >
-                Shop nu
-              </a>
-              <a
-                href="#about"
-                className="text-lg font-semibold leading-6 text-white hover:underline"
-              >
-                Meer weten →
-              </a>
+            <a
+              href="#products"
+              className="bg-white text-green-700 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100"
+            >
+              Bekijk producten
+            </a>
+          </div>
+        </section>
+
+        {/* USP Section */}
+        <section className="py-12 bg-white">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+            <div>
+              <h3 className="text-lg font-semibold">🚚 Gratis verzending</h3>
+              <p className="text-gray-600">Bij elke bestelling boven €50</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">🔒 Veilig betalen</h3>
+              <p className="text-gray-600">Met iDEAL, PayPal of Creditcard</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">↩️ 30 dagen retour</h3>
+              <p className="text-gray-600">Niet goed? Geld terug!</p>
             </div>
           </div>
-          <div className="mt-10 lg:mt-0 lg:w-1/2">
-            <img
-              src="/hero-smart-home.jpg"
-              alt="Slimme producten"
-              className="w-full rounded-2xl shadow-lg"
-            />
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* USP Section */}
-      <section className="mx-auto max-w-7xl px-6 py-16 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-        <div>
-          <span className="text-3xl">🚚</span>
-          <h3 className="mt-4 text-xl font-bold">Gratis verzending</h3>
-          <p className="mt-2 text-gray-600">Bij bestellingen vanaf €50.</p>
-        </div>
-        <div>
-          <span className="text-3xl">💳</span>
-          <h3 className="mt-4 text-xl font-bold">Veilige betalingen</h3>
-          <p className="mt-2 text-gray-600">Altijd beschermd via SSL.</p>
-        </div>
-        <div>
-          <span className="text-3xl">↩️</span>
-          <h3 className="mt-4 text-xl font-bold">30 dagen retour</h3>
-          <p className="mt-2 text-gray-600">Niet goed? Geld terug.</p>
-        </div>
-      </section>
-
-      {/* Product Grid */}
-      <section id="products" className="bg-white py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">
-            Onze Bestsellers
-          </h2>
-          <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-            {/* Product Card */}
-            {[
-              { name: "Slimme Deurbel", price: "€79", img: "/product-doorbell.jpg" },
-              { name: "Smart LED Lamp", price: "€29", img: "/product-ledlamp.jpg" },
-              { name: "Slimme Camera", price: "€99", img: "/product-camera.jpg" },
-              { name: "Smart Thermostaat", price: "€149", img: "/product-thermostat.jpg" },
-              { name: "Slimme Steckers", price: "€39", img: "/product-smartplug.jpg" },
-              { name: "Robotstofzuiger", price: "€199", img: "/product-robotvac.jpg" },
-            ].map((p) => (
-              <div
-                key={p.name}
-                className="flex flex-col rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition"
-              >
-                <img src={p.img} alt={p.name} className="h-64 w-full object-cover" />
-                <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-xl font-bold">{p.name}</h3>
-                  <p className="mt-2 text-lg font-semibold text-blue-600">{p.price}</p>
-                  <button className="mt-auto rounded-xl bg-blue-600 px-4 py-2 text-white font-semibold hover:bg-blue-500 transition">
-                    In winkelwagen
-                  </button>
+        {/* Product Grid */}
+        <section id="products" className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-6">
+            <h2 className="text-3xl font-bold mb-10 text-center">
+              Onze populairste producten
+            </h2>
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                { name: "Slimme Deurbel", price: "€89,99", image: "/deurbel.jpg" },
+                { name: "Smart Camera", price: "€69,99", image: "/camera.jpg" },
+                { name: "Slimme Lamp", price: "€29,99", image: "/lamp.jpg" },
+                { name: "Robot Stofzuiger", price: "€199,99", image: "/stofzuiger.jpg" },
+                { name: "Smart Plug", price: "€24,99", image: "/plug.jpg" },
+                { name: "Slimme Thermostaat", price: "€149,99", image: "/thermostaat.jpg" },
+              ].map((product) => (
+                <div
+                  key={product.name}
+                  className="bg-white rounded-2xl shadow hover:shadow-lg overflow-hidden transition"
+                >
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-56 object-cover"
+                  />
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
+                    <p className="text-green-600 font-bold mb-4">{product.price}</p>
+                    <button className="w-full bg-green-600 text-white py-2 rounded-lg font-medium hover:bg-green-700">
+                      In winkelwagen
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-10">
-        <div className="mx-auto max-w-7xl px-6 flex flex-col sm:flex-row justify-between items-center">
-          <p>© {new Date().getFullYear()} SmartHaven. Alle rechten voorbehouden.</p>
-          <div className="flex gap-6 mt-4 sm:mt-0">
-            <a href="#" className="hover:text-white">Facebook</a>
-            <a href="#" className="hover:text-white">Instagram</a>
-            <a href="#" className="hover:text-white">LinkedIn</a>
+        {/* Footer */}
+        <footer className="bg-gray-900 text-gray-300 py-8">
+          <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center">
+            <p className="text-sm">© {new Date().getFullYear()} SmartHaven. Alle rechten voorbehouden.</p>
+            <div className="flex gap-4 mt-4 sm:mt-0">
+              <a href="#" className="hover:text-white">Facebook</a>
+              <a href="#" className="hover:text-white">Instagram</a>
+              <a href="#" className="hover:text-white">Twitter</a>
+            </div>
           </div>
-        </div>
-      </footer>
-    </div>
-  )
+        </footer>
+      </main>
+    </>
+  );
 }
