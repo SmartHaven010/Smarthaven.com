@@ -4,99 +4,135 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>SmartHaven – Slim wonen begint hier</title>
+        <title>SmartHaven – Slim wonen, strak design</title>
         <meta
           name="description"
-          content="Ontdek de premium collectie slimme woonproducten van SmartHaven. Design, innovatie en gebruiksgemak in één."
+          content="Beleef de toekomst van wonen met SmartHaven. Slimme deurbellen, camera’s en meer – strak en betrouwbaar."
         />
       </Head>
 
       <main className="bg-white text-gray-900 font-sans">
         {/* Hero Section */}
-        <section className="relative h-screen flex flex-col items-center justify-center text-center bg-gray-50">
-          <img
-            src="/hero-deurbel.jpg"
-            alt="Slimme deurbel"
-            className="absolute inset-0 w-full h-full object-cover opacity-20"
-          />
-          <div className="relative z-10 px-6">
-            <h1 className="text-6xl md:text-7xl font-extralight tracking-tight mb-6">
-              Slim wonen. <span className="font-semibold">Stijlvol.</span>
+        <section className="relative bg-gray-50">
+          <div className="max-w-7xl mx-auto px-6 py-32 text-center">
+            <h1 className="text-5xl font-bold tracking-tight mb-6">
+              Slim wonen. Strak design.
             </h1>
-            <p className="text-lg md:text-2xl text-gray-700 mb-8">
-              Ontdek de toekomst van jouw huis bij SmartHaven
+            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+              Ontdek hoe slimme technologie jouw huis veiliger en stijlvoller maakt.  
+              SmartHaven brengt de toekomst naar je voordeur.
             </p>
             <a
               href="#products"
-              className="bg-black text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-800 transition"
+              className="px-6 py-3 rounded-full bg-black text-white text-lg font-medium hover:bg-gray-800 transition"
             >
               Shop nu
             </a>
           </div>
         </section>
 
-        {/* Product showcase */}
-        <section id="products" className="py-24 max-w-7xl mx-auto px-6 space-y-32">
-          {[
-            {
-              name: "Slimme Deurbel",
-              price: "€89,99",
-              desc: "Zie wie er aanbelt, waar je ook bent.",
-              image: "/deurbel.jpg",
-            },
-            {
-              name: "Smart Camera",
-              price: "€69,99",
-              desc: "24/7 beveiliging met haarscherpe beelden.",
-              image: "/camera.jpg",
-            },
-            {
-              name: "Robot Stofzuiger",
-              price: "€199,99",
-              desc: "Altijd een schoon huis zonder moeite.",
-              image: "/stofzuiger.jpg",
-            },
-          ].map((product, i) => (
-            <div
-              key={product.name}
-              className={`flex flex-col md:flex-row items-center gap-12 ${
-                i % 2 === 1 ? "md:flex-row-reverse" : ""
-              }`}
-            >
-              <div className="flex-1">
+        {/* USP Section */}
+        <section className="bg-white border-t border-b border-gray-200 py-12">
+          <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div>
+              <h3 className="text-xl font-semibold mb-2">🚚 Gratis verzending</h3>
+              <p className="text-gray-600">Binnen 2–5 dagen geleverd.</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-2">🔒 Veilig betalen</h3>
+              <p className="text-gray-600">Met iDEAL, PayPal en meer.</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-2">↩️ 30 dagen retour</h3>
+              <p className="text-gray-600">Niet goed? Geld terug.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Products Section */}
+        <section id="products" className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-6">
+            <h2 className="text-4xl font-bold text-center mb-12">
+              Onze Bestsellers
+            </h2>
+
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+              {/* Product Card */}
+              <div className="bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden">
                 <img
-                  src={product.image}
-                  alt={product.name}
-                  className="rounded-3xl shadow-lg w-full"
+                  src="/deurbel.jpg"
+                  alt="Slimme deurbel"
+                  className="w-full h-64 object-cover"
                 />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold">Slimme Deurbel</h3>
+                  <p className="text-gray-600 mb-4">
+                    Zie en spreek bezoekers direct via je smartphone.
+                  </p>
+                  <span className="block text-lg font-bold mb-4">€99</span>
+                  <a
+                    href="#"
+                    className="px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition"
+                  >
+                    In winkelmand
+                  </a>
+                </div>
               </div>
-              <div className="flex-1 text-center md:text-left">
-                <h2 className="text-4xl font-light mb-4">{product.name}</h2>
-                <p className="text-gray-600 text-lg mb-6">{product.desc}</p>
-                <p className="text-2xl font-semibold mb-8">{product.price}</p>
-                <button className="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition">
-                  In winkelwagen
-                </button>
+
+              <div className="bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden">
+                <img
+                  src="/camera.jpg"
+                  alt="Slimme camera"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold">Slimme Camera</h3>
+                  <p className="text-gray-600 mb-4">
+                    Altijd zicht op je huis, waar je ook bent.
+                  </p>
+                  <span className="block text-lg font-bold mb-4">€129</span>
+                  <a
+                    href="#"
+                    className="px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition"
+                  >
+                    In winkelmand
+                  </a>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden">
+                <img
+                  src="/robot.jpg"
+                  alt="Slimme stofzuiger"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold">Robot Stofzuiger</h3>
+                  <p className="text-gray-600 mb-4">
+                    Laat je vloer vanzelf schoonmaken met slimme navigatie.
+                  </p>
+                  <span className="block text-lg font-bold mb-4">€249</span>
+                  <a
+                    href="#"
+                    className="px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition"
+                  >
+                    In winkelmand
+                  </a>
+                </div>
               </div>
             </div>
-          ))}
+          </div>
         </section>
 
         {/* Footer */}
-        <footer className="bg-black text-gray-400 text-center py-12">
-          <p className="mb-4 text-sm">
-            © {new Date().getFullYear()} SmartHaven. Alle rechten voorbehouden.
-          </p>
-          <div className="flex justify-center gap-6 text-sm">
-            <a href="#" className="hover:text-white">
-              Privacy
-            </a>
-            <a href="#" className="hover:text-white">
-              Voorwaarden
-            </a>
-            <a href="#" className="hover:text-white">
-              Contact
-            </a>
+        <footer className="bg-black text-gray-400 py-10 mt-20">
+          <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <p>© 2025 SmartHaven. Alle rechten voorbehouden.</p>
+            <div className="flex gap-6 mt-4 md:mt-0">
+              <a href="#" className="hover:text-white">Privacy</a>
+              <a href="#" className="hover:text-white">Contact</a>
+              <a href="#" className="hover:text-white">Instagram</a>
+            </div>
           </div>
         </footer>
       </main>
