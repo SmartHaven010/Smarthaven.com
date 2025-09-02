@@ -1,8 +1,7 @@
 export default function Home() {
   return (
-    <main style={{ textAlign: "center", padding: "2rem" }}>
-      <h1>Welkom bij SmartHaven 🚀</h1>
-      <p>De plek voor slimme gadgets en smart home producten.</p>
-    </main>
-  );
+    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <h1 className="text-3xl font-bold text-gray-900">Welkom bij Smarthaven!</h1>
+    </div>
+  )
 }
